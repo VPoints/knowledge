@@ -39,13 +39,48 @@
 			</section>
 		</div>
 		<script type="text/javascript">
-		
+		(function(){
+			var obj = {
+				sections:document.getElementsByTagName('section').item(0),
+				atcs:document.getElementsByTagName('article'),
+				h:604,
+				i:0,
+				init:function(){
+					this.sections.style.transform = 'translate3d(0px, 0px, 0px)';
+					
+				},
+				judge:function(){
+					
+				},
+				move:function(){
+					
+				}
+			}
+			console.log(obj)
+		}.call(this))
 			var sections = document.getElementsByTagName('section').item(0);
-				
-			var h = 604;
+				sections.style.transform = 'translate3d(0px, 0px, 0px)';
+			var atcs = document.getElementsByTagName('article');
+			var h = -604;
+			var i = 0;
+			var l = atcs.length-1;
 			document.addEventListener('mousewheel',function(e){
-				sections.style.transform = 'translate3d(0px, '+-h+'px, 0px)';
-				console.log(sections.style.webkitTransform)
+				if(i > 0 && i < l){
+					if(e.deltaY>0){
+						i++;
+					}else{
+						i--;
+					}
+				}else if(i==0){
+					if(e.deltaY>0){
+						i++;
+					}
+				}else if(i==l){
+					if(e.deltaY<0){
+						i--
+					}
+				}
+				sections.style.transform = 'translate3d(0px,'+h*i+'px, 0px)';
 			})
 		</script>
 	</body>
