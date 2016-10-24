@@ -5,6 +5,7 @@
 		<title>我的博客</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 		<link rel="stylesheet/less" type="text/css" href="css/index.less"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 		<script src="js/less.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<style type="text/css">
@@ -12,22 +13,40 @@
 	</style>
 	<body>
 		<header class="clearBox">
-			<div class="logo">
+			<div class="menu-button">
+				
+			</div>
+			<div class="logo fadeIn animated">
 				<a href="">my blogs</a>	
 			</div>
-			<ul class="menu ">
+			<ul class="nav"> 
 				<li><a href="">首页</a></li>
 				<li><a href="">随笔</a></li>
 				<li><a href="">关于</a></li>
 			</ul>
 		</header>
 		<div class="main">
-			
 			<section>
 				<article>
-					
+					asdasd
+				</article>
+				<article>
+					asdasd
+				</article>
+				<article>
+					asdasd
 				</article>
 			</section>
 		</div>
+		<script type="text/javascript">
+		
+			var sections = document.getElementsByTagName('section').item(0);
+				
+			var h = 604;
+			document.addEventListener('mousewheel',function(e){
+				sections.style.transform = 'translate3d(0px, '+-h+'px, 0px)';
+				console.log(sections.style.webkitTransform)
+			})
+		</script>
 	</body>
 </html>

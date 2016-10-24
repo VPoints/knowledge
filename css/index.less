@@ -1,23 +1,31 @@
 @boxPad:10px;
-
+@maxHeight:604px;
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    font: 18px/1.5 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
-
+body{
+    overflow-y:hidden
+}
     a{
         text-decoration: none;
     }
     header{
         box-shadow: 0 0 4px rgba(0,0,0,0.25);
-        margin: 8px;
-        padding: @boxPad*3 @boxPad*6;
+        padding: @boxPad*3 10%;
+        line-height: @boxPad*2;
+        position: fixed;
+        width: 80%;
     }
-        .menu{
+        .menu-button{
+            display: none;
+        }
+        .nav{
             float: right;
         }
-        .menu li{
+        .nav li{
             float: left;
             margin: 0 @boxPad*2;
         }
@@ -30,22 +38,49 @@
             display: block;
             float: left;
         }
-        
     .main{
+        position: relative;
+    }
+    section{
+        position: relative;
+        height: 100%;
+        transition: all 400ms ease;
+        -webkit-transition: all 400ms ease;
         
+    }
+//  section:hover{
+//      transform: translate3d(0px, -@maxHeight, 0px);
+//  }
+    article{
+        padding-top: @boxPad*8;
+        height: 604px-@boxPad*8;
     }
     
     
 @media screen and (max-width: 720px){
     header{
-        padding:@boxPad @boxPad*3;
+        padding:@boxPad 0;
+        position: fixed;
+        width: 100%;
     }
-    .menu{
+    .nav{
         display: none;
     }
     .logo{
         margin: 0 auto;
         float: none;
         text-align: center;
+    }
+    .menu-button{
+        display: block;
+        width: @boxPad*2;
+        height: @boxPad*2;
+        background: url(../imgs/menu.png) no-repeat;
+        background-size:100% 100% ;
+        left: @boxPad*3;
+        position: absolute;
+    }
+    .main{
+        padding:@boxPad*4 0;
     }
 } 
