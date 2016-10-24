@@ -1,0 +1,51 @@
+@boxPad:10px;
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    a{
+        text-decoration: none;
+    }
+    header{
+        box-shadow: 0 0 4px rgba(0,0,0,0.25);
+        margin: 8px;
+        padding: @boxPad*3 @boxPad*6;
+    }
+        .menu{
+            float: right;
+        }
+        .menu li{
+            float: left;
+            margin: 0 @boxPad*2;
+        }
+        .clearBox:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .logo{
+            display: block;
+            float: left;
+        }
+        
+    .main{
+        
+    }
+    
+    
+@media screen and (max-width: 720px){
+    header{
+        padding:@boxPad @boxPad*3;
+    }
+    .menu{
+        display: none;
+    }
+    .logo{
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+    }
+} 
