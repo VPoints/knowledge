@@ -5,6 +5,7 @@
     padding: 0;
     list-style: none;
     font: 18px/1.5 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    
 }
 body{
     overflow-y:hidden
@@ -19,6 +20,8 @@ body{
         position: fixed;
         width: 80%;
         z-index: 2;
+        transition: all 400ms;
+        -webkit-transition: all 400ms; 
     }
         .menu-button{
             display: none;
@@ -39,8 +42,19 @@ body{
             display: block;
             float: left;
         }
+        
     .main{
         position: relative;
+    }
+    .bg{
+        transition: all 500ms;
+        -moz-transition: all 500ms;
+        -webkit-transition: all 500ms;
+        width: 100%;
+        height: 604px;
+        background: url(../imgs/sh.jpg) no-repeat;
+        background-position: center;
+        background-size:100% 100% ;
     }
     section{
         position: relative;
@@ -50,10 +64,29 @@ body{
         
     }
     article{
-        padding-top: @boxPad*8;
-        height: 604px-@boxPad*8;
-    }
-    
+            padding-top: @boxPad*8;
+            height: 604px-@boxPad*8;
+        }
+        .aside{
+            position: fixed;
+            right: 40px;
+        }
+        .aside li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border:1px solid #666;
+            margin: 10px 0;
+        }
+        .aside li:first-child{
+            margin:0 0 10px 0 ;
+        }
+        .aside li:last-child{
+            margin: 10px 0 0 0 ;
+        }
+        .aside .active{
+            background: #666;
+        }
     
 @media screen and (max-width: 720px){
     header{
@@ -81,5 +114,12 @@ body{
     }
     .main{
         padding:@boxPad*4 0;
+    }
+    article{
+        padding-top: @boxPad;
+        height: 604px-@boxPad;
+    }
+    .aside{
+        display: none;
     }
 } 

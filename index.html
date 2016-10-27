@@ -7,6 +7,8 @@
 		<link rel="stylesheet/less" type="text/css" href="css/index.less"/>
 		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 		<script src="js/less.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mytool.js" type="text/javascript" charset="utf-8"></script>
+		
 	</head>
 	<style type="text/css">
 	
@@ -25,63 +27,21 @@
 				<li><a href="">关于</a></li>
 			</ul>
 		</header>
+		<!--<div class="bg"></div>-->
 		<div class="main">
 			<section>
 				<article>
-					asdasd
+					1
 				</article>
 				<article>
-					asdasd
+					2
 				</article>
 				<article>
-					asdasd
+					3
 				</article>
 			</section>
 		</div>
-		<script type="text/javascript">
-		(function(){
-			var obj = {
-				sections:document.getElementsByTagName('section').item(0),
-				atcs:document.getElementsByTagName('article'),
-				h:604,
-				i:0,
-				init:function(){
-					this.sections.style.transform = 'translate3d(0px, 0px, 0px)';
-					
-				},
-				judge:function(){
-					
-				},
-				move:function(){
-					
-				}
-			}
-			console.log(obj)
-		}.call(this))
-			var sections = document.getElementsByTagName('section').item(0);
-				sections.style.transform = 'translate3d(0px, 0px, 0px)';
-			var atcs = document.getElementsByTagName('article');
-			var h = -604;
-			var i = 0;
-			var l = atcs.length-1;
-			document.addEventListener('mousewheel',function(e){
-				if(i > 0 && i < l){
-					if(e.deltaY>0){
-						i++;
-					}else{
-						i--;
-					}
-				}else if(i==0){
-					if(e.deltaY>0){
-						i++;
-					}
-				}else if(i==l){
-					if(e.deltaY<0){
-						i--
-					}
-				}
-				sections.style.transform = 'translate3d(0px,'+h*i+'px, 0px)';
-			})
-		</script>
+		<script src="js/myPages.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 	</body>
 </html>
