@@ -33,6 +33,10 @@ var obj = {
 		this.movego.addEventListener('mousewheel',function(e){
 			self.upOrDown(e);
 			self.creatCheck();
+		});
+		
+		this.movego.addEventListener('touchstart',function(e){
+			alert(1)
 		})
 	},
 	judge:function(e){
