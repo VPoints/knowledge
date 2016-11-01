@@ -24,7 +24,7 @@ var obj = {
 	i:0,	
 	v:400,
 	h:604,
-	begin:0;
+	begin:0,
 	speed:1000,
 	callBack:'',
 	toggleEvent:true,
@@ -41,7 +41,11 @@ var obj = {
 			alert(e.clientY)
 		})
 		this.movego.addEventListener('ontouchmove',function(e){
-			
+			if(e.clientY<self.begin){
+				
+			}else if(e.clientY<self.begin){
+				
+			}
 		})
 	},
 	judge:function(e){
