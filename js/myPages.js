@@ -30,7 +30,7 @@ var obj = {
 	init:function(e){
 		var self = this;
 			self.judge(e);
-		this.sections.addEventListener('mousewheel',function(e){
+		this.movego.addEventListener('mousewheel',function(e){
 			self.upOrDown(e);
 			self.creatCheck();
 		})
