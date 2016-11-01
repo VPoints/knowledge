@@ -39,6 +39,7 @@ var obj = {
 		this.movego.addEventListener('ontouchstart',function(e){
 			self.begin = e.clientY;
 			alert(e.clientY)
+			alert(e.screenY)
 		})
 		this.movego.addEventListener('ontouchmove',function(e){
 			if(e.clientY<self.begin){
