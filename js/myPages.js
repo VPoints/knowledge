@@ -17,7 +17,8 @@
  * 
  * */
 var obj = {
-	sections:document.getElementsByTagName('section').item(0),
+	sections:document.getElementsByClassName('main').item(0),
+	movego:document.getElementsByTagName('section').item(0),
 	atcs:document.getElementsByTagName('article'),
 	checks:'',
 	i:0,	
@@ -37,7 +38,7 @@ var obj = {
 	judge:function(e){
 		mytool.extend(obj,e);
 		this.creatCheck();
-		this.sections.style.transition = 'all ' + this.v + 'ms';
+		this.movego.style.transition = 'all ' + this.v + 'ms';
 		return
 	},
 	upOrDown:function(e){
@@ -56,7 +57,7 @@ var obj = {
 		return
 	},
 	move:function(){
-		return	this.sections.style.transform = 'translate3d(0px,-'+this.h*this.i+'px, 0px)';
+		return	this.movego.style.transform = 'translate3d(0px,-'+this.h*this.i+'px, 0px)';
 	},
 	creatCheck:function(){
 		var l = this.atcs.length,str='',wh = document.documentElement.clientHeight;
@@ -65,7 +66,7 @@ var obj = {
 					//创建节点和添加节点内容
 					//uls.setAttribute('id','aside')
 					uls.setAttribute("class", "aside");
-					this.sections.parentNode.appendChild(uls);
+					this.movego.parentNode.appendChild(uls);
 					this.checks = uls;  // 保存变量
 				var Node = window.getComputedStyle(uls,null);  // 为了拿到css属性
 				var h = Node.height.substring(0,Node.height.indexOf('px'))-0;//去除px 拿到纯数字 
