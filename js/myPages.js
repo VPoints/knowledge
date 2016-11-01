@@ -24,6 +24,7 @@ var obj = {
 	i:0,	
 	v:400,
 	h:604,
+	begin:0;
 	speed:1000,
 	callBack:'',
 	toggleEvent:true,
@@ -33,10 +34,14 @@ var obj = {
 		this.movego.addEventListener('mousewheel',function(e){
 			self.upOrDown(e);
 			self.creatCheck();
+			
 		});
-		
-		this.movego.addEventListener('touchstart',function(e){
-			alert(1)
+		this.movego.addEventListener('ontouchstart',function(e){
+			self.begin = e.clientY;
+			alert(e.clientY)
+		})
+		this.movego.addEventListener('ontouchmove',function(e){
+			
 		})
 	},
 	judge:function(e){
@@ -48,6 +53,7 @@ var obj = {
 	upOrDown:function(e){
 		var i = this.i;
 		var l = this.atcs.length-1;
+		
 		if(i > 0 && i < l){if(e.deltaY>0){i++;}else{i--;}}
 		else if(i==0){if(e.deltaY>0){i++;}}
 		else if(i==l){if(e.deltaY<0){i--;}};
